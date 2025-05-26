@@ -1,13 +1,20 @@
+// app/_layout.tsx
 import * as Location from 'expo-location';
+import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { Dimensions, ScrollView, StyleSheet, Text, View } from 'react-native';
+
+export default function RootLayout() {
+  return <Stack />;
+}
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 export default function IndexScreen() {
   const [location, setLocation] = useState<Location.LocationObject | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  console.log(Location);
 
   useEffect(() => {
     async function getCurrentLocation() {
